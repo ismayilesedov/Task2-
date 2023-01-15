@@ -42,7 +42,7 @@ namespace Task2
 
 
 
-        }//+
+        }
         static void task2()
         {
             //verilmihs 6 reqemli ededin ilk 3 denesinin reqemleri cemi tap:
@@ -72,7 +72,7 @@ namespace Task2
                 goto label1;
             }
 
-        }//+
+        }
         static void task3()
         {
             //verilmihs 9 reqemli ededin duz ortaya dushen 3 reqeminin reqemleri cemi
@@ -102,7 +102,7 @@ namespace Task2
                 goto label1;
             }
 
-        }//+
+        }
         static void task4()
         {
             //verilmihs 5 reqemli ilk ve son reqemlerinin ceminin kvadrati
@@ -129,7 +129,7 @@ namespace Task2
                 goto label1;
             }
 
-        } //+
+        } 
         static void task5()
         {
             //verilmihs 6 reqemli ededin 1 ci reqemini hemin ededin axirina at.
@@ -151,7 +151,7 @@ namespace Task2
                 goto label1;
             }
 
-        }//+
+        }
         static void task6()
         {
             //verilmihs 8 reqemli ededin ilk I ve axirinci reqemlerini legv et
@@ -171,7 +171,7 @@ namespace Task2
                 goto label1;
             }
 
-        }//+
+        }
         static void task7()
         {
             //verilmihs 4 reqemli ededin tersine duzub axirina ve evveline 8 artir
@@ -198,7 +198,7 @@ namespace Task2
                 Console.WriteLine("Duzgun ededi daxil edin");
                 goto label1;
             }
-        }//+
+        }
         static void task8()
         {
             Console.WriteLine("         Programa xosh gelmisiniz ");
@@ -218,7 +218,7 @@ namespace Task2
                 Console.WriteLine("Duzgun ededi daxil edin");
                 goto label1;
             }
-        }//+
+        }
         static void task9()
         {
             //9 reqemli ededdin tek yerde dayananlardan bir eded duzlet
@@ -258,7 +258,7 @@ namespace Task2
 
                 Console.WriteLine(part1);
             }
-        }//+
+        }
         static void task10()
         {
             //9 reqemli ededdi tek yerde dayananlardan bir eded duzlet,
@@ -305,7 +305,7 @@ namespace Task2
                 Console.WriteLine("Tek yerde duran ededler :" + part2);
                 Console.WriteLine($"Bu ededlerin cemi:{part1} + {part2}={part1 + part2}");
             }
-        }//+
+        }
         static void task11()
         {
             // 8 reqemli ededin reqemlerini iki -iki qruplashdir.
@@ -338,7 +338,7 @@ namespace Task2
                 goto label1;
             }
 
-        }//+
+        }
         static void task12()
 
         {
@@ -374,7 +374,7 @@ namespace Task2
                 Console.WriteLine($"hasilin ve cemin toplanmasicem={cem}");
                 cem = cem * 10 + (temp % 10);
                 Console.WriteLine($"son netice={cem}");
-        }//+
+        }
         static void task13()
         {
             // 3 dene 5 reqemli eded var.
@@ -408,7 +408,7 @@ namespace Task2
                 Console.WriteLine("b ededinden emele gelen yeni eded :" + first2);
                 Console.WriteLine("c ededinden emele gelen yeni eded :" + first3);
                 Console.WriteLine("Umumi cavab :" + d);
-        }//+
+        }
         static void task14()
         {
             //4 dene eded daxil et. Bunlardan 3 denesi 6 reqemli bir denesi ise 7 reqemli olsun.
@@ -442,7 +442,7 @@ namespace Task2
                 b = (a * 18) / 100;
                 a = a - b;
                 Console.WriteLine("Yekun cavab :" + a);         
-        }//+
+        }
         static void task15()
         {
             // 5 dene eded daxil et. Bunlarda 2 denesi 3 reqemli. 2 denesi 6 reqemli . 1 denesi 7 reqemli olsun.
@@ -454,11 +454,59 @@ namespace Task2
             //  Cavabin axirina 11 artir.
             //   Sonra 7 reqemli ededin tek yerde dayan reqemlerinde alinan ededi cix.
             //   Cavabin axirdan II reqemi ile axirinci reqemin arasina 88 elave et.
-            double a = number3(); double menimset;
-            double b = number3(); double x;
-         double c=number6();
-         double d=number6();
-         double n=number7();
+            int y = number3(); int sum, son, son1, ters = 0, end;
+            int x = number3();
+            int z =number6();
+            int t =number6();
+            int s =number7();
+            sum = y + x;
+            son = sum % 100;
+            son = son * son;
+            son = son + y * 1000 + x;
+            son = son - s % 100000;
+            son = son + (z + t) % 1000;
+            while (s > 0)
+            {
+                son1 = s % 10;
+                sum += son1;
+                s /= 10;
+
+
+            }
+            while (sum > 0)
+            {
+                son1 = sum % 10;
+                ters = ters * 10 + son1;
+                sum /= 10;
+
+            }
+            son = son + ters;
+            son = son * 100 + 11;
+
+            while (s > 0)
+            {
+                end = s % 10;
+                ters = ters * 10 + end;
+                s /= 10;
+            }
+            int i = 1, parttek = 0;
+            while (ters > 0)
+            {
+                end = ters % 10;
+                ters /= 10;
+                if (i % 2 != 0)
+                {
+                    parttek = parttek * 10 + end;
+                }
+                i++;
+            }
+            son = son - parttek;
+            sum = son % 10;
+            son1 = son / 10;
+            son = son1 * 1000 + 88 * 10 + sum;
+            Console.WriteLine($"son netice={son}");
+
+
         }
 
 
